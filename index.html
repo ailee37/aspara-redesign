@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspara Redesign</title>
+    <link rel="stylesheet" href="https://use.typekit.net/hbu1pct.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap.js">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Instrument+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <!-- <h3 tabindex="0">[cs1300]</h3> -->
+        <img src="images/logo.png" tabindex="0">
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links"
+            tabindex="0">☰</button>
+        <ul id="nav-links">
+            <li><b><a href="#introduction" aria-label="Go to Introduction section" tabindex="0">HOME</a></b>
+            </li>
+            <li><b><a href="#part-1" aria-label="Sketching and Wireframing" tabindex="0">ABOUT</a></b></li>
+            <li><b><a href="#part-2" aria-label="Critique & Hi-Fi Prototyp" tabindex="0">MENU</a></b></li>
+            <li><b><a href="#part-3" aria-label="Final Feedback" tabindex="0">ORDER</a></b></li>
+            <li><b><a href="#part-3" aria-label="Final Feedback" tabindex="0">CONTACT US</a></b></li>
+        </ul>
+    </nav>
+
+    <main class="container" role="main">
+        <section id="introduction" class="section-head">
+            <p style="background-image: url('images/food.jpeg');">
+
+            <div class="white-box-left">
+
+                <h3 class="blurb">Providence’s Finest Thai, Cambodian, Vietnamese & Chinese Cuisine</h3>
+
+                <p class="info">
+                    We are dedicated to bringing you the finest Authentic Asian Cuisine in 
+                    Rhode Island. Our goal is to preserve the art of traditional home style 
+                    Asian culinary dishes, in a warm and inviting atmosphere.
+
+                </p>
+            </div>
+
+            <div class="white-box-right">
+                <div>
+                    <h2>
+                        <b>Hours: </b> <br>
+                        Fri & Sat 10am-10pm <br>
+                        <b>CLOSED TUESDAYS</b> <br>
+                        Sun-Thurs 10am-9:30pm <br>
+                    </h2>
+                </div>
+
+                <div>
+                    <button id="team1" class="button button1">Order Here</button>
+                </div>
+            </div>
+        </p>
+
+
+
+            <div class="transition-text" style="align-content: center;">
+
+            </div>
+        </section>
+
+
+        <section id="part-1" class="section">
+            <h2>OUR FOOD</h2>
+            <div class="carousel">
+              <button onclick="goBackward()">&#x276E;</button>
+              <img id="backImg" class="side-img left" src="" alt="Back Image">
+              <img id="mainImg" class="main-img" src="" alt="Main Image">
+              <img id="frontImg" class="side-img right" src="" alt="Front Image">
+              <button onclick="goForward()">&#x276F;</button>
+            </div>
+          
+            <button class="menu-btn" onclick="location.href='/gallery'">View Full Menu</button>
+        </section>
+
+
+           <!-- Navigation Bar -->
+    <nav class="footer" role="navigation" aria-label="Main navigation">
+        <h3 tabindex="0">ASPARA</h3>
+        <h3>716 Public St. Providence, RI 02907</h3>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links"
+            tabindex="0">☰</button>
+        <ul id="nav-links">
+            <li><b><a href="#introduction" aria-label="Go to Introduction section" tabindex="0">CAMBODIAN</a></b>
+            </li>
+            <li><b><a href="#part-1" aria-label="Sketching and Wireframing" tabindex="0">THAI</a></b></li>
+            <li><b><a href="#part-2" aria-label="Critique & Hi-Fi Prototyp" tabindex="0">VIETNAMESE</a></b></li>
+            <li><b><a href="#part-3" aria-label="Final Feedback" tabindex="0">CHINESE</a></b></li>
+            <li><b><a href="#part-3" aria-label="Final Feedback" tabindex="0">CUISINE</a></b></li>
+        </ul>
+    </nav>
+
+
+
+    </main>
+
+    <script>
+        const samplepics = [
+        "images/food_9.jpg",
+        "images/food_7.jpg",
+        "images/food_8.jpg",
+        "images/food_3.jpg",
+        "images/food_2.jpg",
+        "images/food_1.jpg",
+        "images/food_4.jpg",
+        ];
+
+        let index = 1;
+
+        function updateImages() {
+        const front = (index + 1) % samplepics.length;
+        const back = (index - 1 + samplepics.length) % samplepics.length;
+
+        document.getElementById("mainImg").src = samplepics[index];
+        document.getElementById("frontImg").src = samplepics[front];
+        document.getElementById("backImg").src = samplepics[back];
+        }
+
+        function goForward() {
+        index = (index + 1) % samplepics.length;
+        updateImages();
+        }
+
+        function goBackward() {
+        index = (index - 1 + samplepics.length) % samplepics.length;
+        updateImages();
+        }
+
+        window.onload = updateImages;
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageContainers = document.querySelectorAll(".image-container");
+
+            imageContainers.forEach(container => {
+                container.addEventListener("click", function () {
+                    this.classList.toggle("flipped");
+                });
+            });
+        });
+    </script>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.navbar ul');
+        const menuItems = document.querySelectorAll('.navbar ul a');
+
+        // Toggle menu on button click or Enter key
+        function toggleMenu(event) {
+            if (event.type === "click" || event.key === "Enter") {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === "true";
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('keydown', toggleMenu); // Allow Enter key to toggle menu
+
+        // Allow pressing Enter to follow links
+        menuItems.forEach(item => {
+            item.addEventListener('keydown', (event) => {
+                if (event.key === "Enter") {
+                    window.location.href = item.getAttribute('href');
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".navbar ul li a");
+
+            function highlightNav() {
+                let scrollPosition = window.scrollY;
+
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 100; // Adjust for fixed navbar
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute("id");
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active");
+                            if (link.getAttribute("href").includes(sectionId)) {
+                                link.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", highlightNav);
+        });
+    </script>
+</body>
+
+</html>
