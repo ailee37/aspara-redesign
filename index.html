@@ -7,9 +7,10 @@
     <title>Aspara Redesign</title>
     <link rel="stylesheet" href="https://use.typekit.net/hbu1pct.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="bootstrap.js">
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,10 +46,10 @@
                 </p>
             </div>
 
-            <div class="white-box-right">
+            <div class="white-box-right" style="text-align: center;">
                 <div>
-                    <h2>
-                        <b>Hours: </b> <br>
+                    <h2 class="section-sub">
+                        <strong>Hours: </strong> <br>
                         Fri & Sat 10am-10pm <br>
                         <b>CLOSED TUESDAYS</b> <br>
                         Sun-Thurs 10am-9:30pm <br>
@@ -70,7 +71,7 @@
 
 
         <section id="part-1" class="section">
-            <h2>OUR FOOD</h2>
+            <h2 class="food">OUR FOOD</h2>
             <div class="carousel">
               <button onclick="goBackward()">&#x276E;</button>
               <img id="backImg" class="side-img left" src="" alt="Back Image">
@@ -79,27 +80,43 @@
               <button onclick="goForward()">&#x276F;</button>
             </div>
           
-            <button class="menu-btn" onclick="location.href='/gallery'">View Full Menu</button>
+            <button class="menu-btn">View Full Menu</button>
         </section>
 
+        <section id="part-1" class="section-foot">
+            <div class="grid-container">
+                <div class="iframe-container">
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11896.870142821523!2d-71.4254695!3d41.802074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98b2112aaa5f053a!2sApsara%20Asian%20Restaurant!5e0!3m2!1sen!2sus!4v1576089877638!5m2!1sen!2sus"
+                width="500"
+                height="400"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0">
+                </iframe>
+            </div>
+            <div>
+                <div class="footer-info">
+                    <h3 tabindex="0">ASPARA</h3>
+                    <h3>716 Public St. Providence, RI 02907</h3>
+                </div>
+                <p class="contact-phone">
+                    Tel: 401-785-1490<br>
+                    Tel: 401-785-0742<br>
+                </p>
+                <p class="contact-hours">
+                    Hours:<br>
+                    Fri & Sat: 10am - 10pm<br>
+                    Sun - Thurs: 10am - 9:30pm<br>
+                    Closed on Tuesdays<br>
+                </p>
+                <p class="footer-blurb">CAMBODIAN   THAI   VIETNAMESE   CHINESE   CUISINE</p>
 
-           <!-- Navigation Bar -->
-    <nav class="footer" role="navigation" aria-label="Main navigation">
-        <h3 tabindex="0">ASPARA</h3>
-        <h3>716 Public St. Providence, RI 02907</h3>
-        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links"
-            tabindex="0">☰</button>
-        <ul id="nav-links">
-            <li><b><a href="#introduction" aria-label="Go to Introduction section" tabindex="0">CAMBODIAN</a></b>
-            </li>
-            <li><b><a href="#part-1" aria-label="Sketching and Wireframing" tabindex="0">THAI</a></b></li>
-            <li><b><a href="#part-2" aria-label="Critique & Hi-Fi Prototyp" tabindex="0">VIETNAMESE</a></b></li>
-            <li><b><a href="#part-3" aria-label="Final Feedback" tabindex="0">CHINESE</a></b></li>
-            <li><b><a href="#part-3" aria-label="Final Feedback" tabindex="0">CUISINE</a></b></li>
-        </ul>
-    </nav>
-
-
+            </div>
+        </div>
+        </section>
 
     </main>
 
